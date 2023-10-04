@@ -15,8 +15,8 @@ function Section2() {
             We provide solutions to clients worldwide
           </span>
 
-          <div className="w-[50%] md:w-[15%] h-12 bg-green-500 self-center flex justify-center items-center text-white rounded-2xl text-lg md:text-2xl relative">
-            <span>Know More</span>
+          <div className="w-[50%] md:w-[15%] h-12 bg-green-500 self-center flex  gap-5 justify-around items-center text-white rounded-2xl text-lg md:text-2xl relative">
+            <span className=" mr-5">Know More</span>
             <svg
               className="w-6 h-6 md:w-8 md:h-8 ml-2 transform -rotate-45 absolute -translate-y-1/2 right-5 top-1/2"
               fill="none"

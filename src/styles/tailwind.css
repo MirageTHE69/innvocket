@@ -36,10 +36,12 @@
 
 .bg-image-section2 {
   background-image: url("../images/abstract.png");
-  background-size: 25%;
+  background-size: 20%;
   background-position: left;
   background-repeat: no-repeat;
 }
+
+
 
 .card-container {
   perspective: 1000px;

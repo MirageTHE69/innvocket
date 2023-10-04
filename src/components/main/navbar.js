@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
+import logoImg from "../../images/Logo.png"
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -9,9 +10,15 @@ function Navbar() {
   }
 
   return (
-    <nav className="fixed w-full h-20 flex flex-col justify-between items-center pt-5 backdrop-filter backdrop-blur-lg bg-black bg-opacity-0 z-50 shadow-2xl">
+    <nav className="fixed w-full h-20 flex flex-col justify-between items-center pb-10 backdrop-filter backdrop-blur-lg bg-black bg-opacity-0 z-50 shadow-2xl">
       <div className="container mx-auto flex items-center justify-center">
-        <div className="text-black text-3xl font-bold">Logo</div>
+        <div>
+          <img
+            src={logoImg}
+            alt="LOGO"
+            className="h-20 w-24 ml-10   top-0 object-contain"
+          />
+        </div>{" "}
         <ul className="w-full flex justify-center items-center space-x-10 text-2xl">
           <li className="relative">
             <span
