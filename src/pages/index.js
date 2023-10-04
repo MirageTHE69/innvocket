@@ -27,7 +27,7 @@ const IndexPage = () => (
     <div className="bg-black pb-10">
       <Projects />
     </div>
-    <div className="bg-black pb-10">
+    <div className="bg-black pb-10 pt-10">
       <Companys />
     </div>
     <div className="bg-black pb-10">
