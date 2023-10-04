@@ -4,10 +4,10 @@ import second from "../../images/teamImages.png"
 
 function Section2() {
   return (
-    <div className="mt-7 mb-14">
+    <div className="mt-7 mb-14 pr-2 ">
       <div className="h-screen w-screen bg-image-section1">
         <div className="flex h-full w-full flex-col gap-6 md:gap-16 backdrop-blur-3xl">
-          <span className="text-2xl md:text-4xl lg:text-6xl text-[#c2e2d4] capitalize text-center">
+          <span className="text-2xl md:text-2xl lg:text-5xl text-[#c2e2d4] capitalize text-center">
             Innvocket is a design and technology firm working
           </span>
           <div className="h-80 w-80 md:h-96 md:w-96 self-center">
@@ -19,7 +19,7 @@ function Section2() {
               />
             </div>
           </div>
-          <span className="text-2xl md:text-4xl lg:text-6xl mt-10 text-[#c2e2d4] capitalize text-center">
+          <span className="text-2xl md:text-4xl lg:text-5xl mt-10 text-[#c2e2d4] capitalize text-center">
             We provide solutions to clients worldwide
           </span>
 
