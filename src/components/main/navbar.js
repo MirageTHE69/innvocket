@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import logoImg from "../../images/Logo.png"
 import Ham from "../../images/hamburger.png"
 
-function Navbar() {
+function Navbar({ textColor }){
   const [menuOpen, setMenuOpen] = useState(false)
 
   const toggleMenu = () => {
@@ -11,7 +11,9 @@ function Navbar() {
   }
 
   return (
-    <nav className="fixed w-full h-20 flex flex-col justify-between items-center pb-10  z-50 ">
+    <nav
+      className={`fixed w-full h-20 flex flex-col justify-between items-center pb-10  z-50 ${textColor}`}
+    >
       <div className="container mx-auto flex items-center justify-center">
         <div>
           <img

@@ -42,11 +42,16 @@ function Team() {
   }, [])
 
   return (
-    <div>
-      <div className="h-full w-full bg-image-section1">
+    <div className=" p-16">
+      <div className="h-full w-full bg-image-section1 custom-heading">
         <div className="h-full w-full backdrop-blur-3xl">
           <div className="flex flex-col items-center mb-16">
-            <span className="block text-white text-6xl">Expert</span>
+            <span
+              className="block text-white text-6xl"
+              style={{ letterSpacing: "0.1em" }}
+            >
+              <i className="italic">E</i>xpert
+            </span>{" "}
             <span className="block text-6xl text-white">Members</span>
           </div>
           <div className="px-4 sm:px-10 flex items-center justify-center">

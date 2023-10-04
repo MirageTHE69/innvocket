@@ -6,7 +6,7 @@ const logos = [Logo1, Logo2, Logo1]
 
 function Companys() {
   return (
-    <div className="w-screen h-auto bg-image-section2 mt-10 mb-10">
+    <div className="w-screen h-auto bg-image-section2 mt-10 mb-10 ">
       <div className="w-full h-full backdrop-blur-3xl">
         <span className="flex w-screen justify-center text-4xl mt-8 text-white pt-10 capitalize">
           Our clients

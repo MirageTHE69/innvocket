@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -21,13 +21,13 @@ const IndexPage = () => (
     <div className="bg-slate-300">
       <HeroSection />
     </div>
-    <div className="bg-black pb-10 ">
+    <div className="bg-black pb-10 md:px-2 lg:px-0 px-5">
       <Section2 />
     </div>
     <div className="bg-black pb-10">
       <Projects />
     </div>
-    <div className="bg-black w-full h-full pb-14 pt-14">
+    <div className="bg-black w-full h-full">
       <Companys />
     </div>
     <div className="bg-black pb-10">

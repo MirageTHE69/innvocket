@@ -2,18 +2,29 @@ import * as React from "react"
 import Android from "../../images/mobile.png"
 import UiUx from "../../images/uiux.png"
 import Web from "../../images/web.png"
+import { split } from "postcss/lib/list"
 
 function Projects() {
+  const text = "Recent"
+  const parts = text.split("R")
+
   return (
     <div class="mainScreen flex h-screen w-screen items-center justify-center bg-black pt-30">
       <div class="flex h-screen w-screen items-center justify-center">
         <div class="flex h-full flex-col items-center space-y-4">
           <div class="flex flex-col items-center">
-            <span class="block  font-bold text-white text-6xl"> Recent </span>
-            <span class="block text-6xl font-bold text-white"> Work </span>
+            <span
+              class="block  font-bold text-white text-6xl "
+              style={{ letterSpacing: "0.1em" }}
+            >
+              {" "}
+              <i className="italic">R</i>
+              {parts[1]}
+            </span>
+            <span class="block text-6xl font-bold text-white" style={{ letterSpacing: "0.1em" }}> Work </span>
           </div>
           <hr class="border-t-1 w-screen border-gray-400" />
-          <span class="block w-3/4 text-center text-4xl text-white">
+          <span class="block w-2/4 py-4 text-center  font-thin  opacity-40 text-xl text-white">
             {" "}
             Check out our latest projects. We combine fresh ideas with our deep
             knowledge to create work we're proud of.{" "}

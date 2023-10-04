@@ -1,13 +1,15 @@
 import * as React from "react"
 
 function HeroSection() {
+  
   return (
     <div className="h-screen w-screen bg-image-section custom-heading">
       <div className="flex h-screen w-screen backdrop-blur-3xl">
         <div className="w-screen h-screen flex flex-col justify-center">
           <div className="w-full flex items-center justify-center">
             <span className="text-xl md:text-4xl lg:text-7xl px-1 text-black flex items-center justify-center">
-              Rocketing Your Digital Vision to Reality
+              <i className=" italic">R</i>
+              ocketing Your Digital Vision to Reality
             </span>
           </div>
           <div className="w-screen flex justify-center mt-8 md:ml-20">
