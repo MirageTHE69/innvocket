@@ -1,6 +1,6 @@
 import * as React from "react"
 import Android from "../../images/mobile.png"
-import UiUx  from "../../images/uiux.png"
+import UiUx from "../../images/uiux.png"
 import Web from "../../images/web.png"
 
 function Projects() {
@@ -15,8 +15,8 @@ function Projects() {
           <hr class="border-t-1 w-screen border-gray-400" />
           <span class="block w-3/4 text-center text-4xl text-white">
             {" "}
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi
-            molestias quo veniam dicta, placeat architecto aperiam quae{" "}
+            Check out our latest projects. We combine fresh ideas with our deep
+            knowledge to create work we're proud of.{" "}
           </span>
           <div class="justify-between flex h-[90%] w-3/4 space-x-4">
             <div class="group relative flex-1  bg-gradient-to-r from-blue-500 to-blue-300 p-4 text-white">
@@ -42,11 +42,11 @@ function Projects() {
             </div>
           </div>
           <div class="group relative  h-56 w-3/4 bg-gradient-to-r from-blue-500 to-yellow-100 p-4 text-white">
-          <img
-                src={Web}
-                alt="Card 1 Image"
-                class="w-full h-full  object-cover absolute inset-0"
-              />
+            <img
+              src={Web}
+              alt="Card 1 Image"
+              class="w-full h-full  object-cover absolute inset-0"
+            />
             <button class="absolute inset-0 flex items-center justify-center rounded-md bg-white bg-opacity-20 p-2 opacity-0 backdrop-blur-md group-hover:opacity-100">
               View Project
             </button>

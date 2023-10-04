@@ -3,21 +3,16 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-
-
 /*font*/
 
 .custom-heading {
   font-family: "HelveticaNowDisplay-Bold", sans-serif; /* Use 'sans-serif' as a fallback font */
   /* Other styles for your heading */
-  
 }
-
 
 .custom-heading2 {
   font-family: "HelveticaNowDisplay-Medium", sans-serif; /* Use 'sans-serif' as a fallback font */
   /* Other styles for your heading */
-  
 }
 
 .bg-image-section {
@@ -40,8 +35,6 @@
   background-position: left;
   background-repeat: no-repeat;
 }
-
-
 
 .card-container {
   perspective: 1000px;
@@ -93,4 +86,36 @@
 .flip-card img {
   width: 100%;
   height: auto;
+}
+
+/* navbar.css */
+
+/* Overlay for glass morphism */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7); /* Adjust opacity as needed */
+  backdrop-filter: blur(5px); /* Adjust the blur amount as needed */
+  display: none;
+  z-index: 999;
+}
+
+/* Menu container */
+.menu-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 300px; /* Adjust the menu width as needed */
+  background-color: rgba(255, 255, 255, 0.95); /* Adjust opacity as needed */
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.menu-open {
+  transform: translateX(0);
 }

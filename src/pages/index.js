@@ -21,7 +21,7 @@ const IndexPage = () => (
     <div className="bg-slate-300">
       <HeroSection />
     </div>
-    <div className="bg-black pb-10">
+    <div className="bg-black pb-10 ">
       <Section2 />
     </div>
     <div className="bg-black pb-10">
