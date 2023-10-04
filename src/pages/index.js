@@ -16,27 +16,27 @@ import Navbar from "../components/main/navbar"
 import Footer from "../components/main/footer"
 
 const IndexPage = () => (
-  <div className="w-screen h-screen custom-heading overflow-x-hidden bg-black">
+  <div className="w-screen custom-heading overflow-x-hidden bg-black">
     <Navbar />
-    <div className="bg-slate-300 w-screen h-screen">
+    <div className="bg-slate-300">
       <HeroSection />
     </div>
-    <div className="bg-black pb-5 ">
+    <div className="bg-black pb-10">
       <Section2 />
     </div>
-    <div className="bg-black w-full h-full">
+    <div className="bg-black pb-10">
       <Projects />
     </div>
-    <div className="bg-black w-full h-full pt-10">
+    <div className="bg-black pb-10">
       <Companys />
     </div>
-    <div className="w-full h-full bg-black">
+    <div className="bg-black pb-10">
       <Team />
     </div>
-    <div className="bg-black pt-16">
+    <div className="bg-black pb-10">
       <GetInTouch />
     </div>
-    <div className=" bg-[#0a120f]  backdrop-blur-3xl ">
+    <div className="bg-[#0a120f]">
       <Footer />
     </div>
   </div>

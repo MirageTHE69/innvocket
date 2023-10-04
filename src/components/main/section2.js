@@ -2,24 +2,23 @@ import * as React from "react"
 
 function Section2() {
   return (
-    <div className=" mt-7">
-      <div class="h-screen w-screen bg-image-section1">
-        <div class="flex h-full w-full flex-col  gap-16 backdrop-blur-3xl ">
-          <span class="flex w-full   justify-center text-center text-6xl text-[#c2e2d4] capitalize">
-            Innvocket is design and technology firm working
+    <div className="mt-7 mb-14">
+      <div className="h-screen w-screen bg-image-section1">
+        <div className="flex h-full w-full flex-col gap-6 md:gap-16 backdrop-blur-3xl">
+          <span className="text-2xl md:text-4xl lg:text-6xl text-[#c2e2d4] capitalize text-center">
+            Innvocket is a design and technology firm working
           </span>
-          <div class="h-[50%] w-[40%] self-center">
-            <div class="mt-8 h-full w-full bg-slate-200"></div>
+          <div className="h-80 w-80 md:h-96 md:w-96 self-center">
+            <div className="mt-8 h-full w-full bg-slate-200"></div>
           </div>
-          <span class="flex w-full   justify-center  text-center text-6xl text-[#c2e2d4] capitalize">
-            {" "}
-            We gave solution to all over world{" "}
+          <span className="text-2xl md:text-4xl lg:text-6xl mt-10 text-[#c2e2d4] capitalize text-center">
+            We provide solutions to clients worldwide
           </span>
 
-          <div className="w-[15%] h-12 bg-green-500 self-center flex justify-center items-center text-white rounded-2xl text-2xl relative">
+          <div className="w-[50%] md:w-[15%] h-12 bg-green-500 self-center flex justify-center items-center text-white rounded-2xl text-lg md:text-2xl relative">
             <span>Know More</span>
             <svg
-              className="w-6 h-6 ml-2 transform -rotate-45 absolute  -translate-y-1/2 right-5 top-1/2"
+              className="w-6 h-6 md:w-8 md:h-8 ml-2 transform -rotate-45 absolute -translate-y-1/2 right-5 top-1/2"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

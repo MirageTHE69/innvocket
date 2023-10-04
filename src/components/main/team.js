@@ -7,8 +7,8 @@ function Team() {
   return (
     <div>
       <div class="flex flex-col items-center mb-16">
-        <span class="block  font-bold text-white text-6xl"> Expert </span>
-        <span class="block text-6xl font-bold text-white"> Member </span>
+        <span class="block   text-white text-6xl"> Expert </span>
+        <span class="block text-6xl  text-white"> Member </span>
       </div>{" "}
       <div class="card-container flex justify-center items-center">
         <div>
