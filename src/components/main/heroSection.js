@@ -13,12 +13,12 @@ function HeroSection() {
           <div>
             <div class=" w-screen flex justify-center  ml-7 mt-8  ">
               <div class=" w-[60%]  flex gap-11  ">
-                <div className="w-full h-16 bg-white rounded-full p-2 flex items-center justify-center relative">
+                <div className="w-full h-14 bg-white rounded-full mt-10 p-2 flex items-center justify-center relative">
                   <span className="text-4xl text-green-500 mr-4">
                     Get in Touch
                   </span>
                   <svg
-                    className="w-9 h-9 text-green-500 absolute  right-10 transform -rotate-45"
+                    className="w-9 h-9 text-green-500 absolute   right-10 transform -rotate-45"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
