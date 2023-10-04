@@ -1,0 +1,94 @@
+/* styles/tailwind.css */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+
+/*font*/
+
+.custom-heading {
+  font-family: "HelveticaNowDisplay-Bold", sans-serif; /* Use 'sans-serif' as a fallback font */
+  /* Other styles for your heading */
+  
+}
+
+
+.custom-heading2 {
+  font-family: "HelveticaNowDisplay-Medium", sans-serif; /* Use 'sans-serif' as a fallback font */
+  /* Other styles for your heading */
+  
+}
+
+.bg-image-section {
+  background-image: url("../images/Ellipse.png");
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-image-section1 {
+  background-image: url("../images/abstract.png");
+  background-size: 30%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-image-section2 {
+  background-image: url("../images/abstract.png");
+  background-size: 25%;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+.card-container {
+  perspective: 1000px;
+  display: flex;
+  gap: 20px;
+}
+
+.flip-card {
+  width: 550px;
+  height: 550px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+}
+
+.flip-card-back {
+  background-color: #333;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-card img {
+  width: 100%;
+  height: auto;
+}
