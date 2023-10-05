@@ -13,44 +13,44 @@ function Navbar() {
         <a
           href="#"
           className={`nav home flex-1 p-4 text-center text-sm no-underline ${
-            activeTab === "home"
+            activeTab === "All"
               ? "text-green-300 w-full h-full backdrop-blur-2xl bg-transparent  border border-green-500 p-2 rounded-xl"
               : "text-white "
           }`}
-          onClick={() => handleTabClick("home")}
+          onClick={() => handleTabClick("All")}
         >
           <i className="fa fa-home mr-1.5 text-1.2rem"></i>All
         </a>
         <a
           href="#"
           className={`nav search flex-1 p-4 text-center text-sm no-underline ${
-            activeTab === "search"
+            activeTab === "Mobile"
               ? "text-green-300 w-full h-full backdrop-blur-2xl bg-transparent  border border-green-500 p-2 rounded-xl"
               : "text-white "
           }`}
-          onClick={() => handleTabClick("search")}
+          onClick={() => handleTabClick("Mobile")}
         >
           <i className="fa fa-search mr-1.5 text-1.2rem"></i>Mobile Apps
         </a>
         <a
           href="#"
           className={`nav following flex-1 p-4 text-center text-sm no-underline ${
-            activeTab === "following"
+            activeTab === "Web"
               ? "text-green-300 w-full h-full backdrop-blur-2xl bg-transparent  border border-green-500 p-2 rounded-xl"
               : "text-white "
           }`}
-          onClick={() => handleTabClick("following")}
+          onClick={() => handleTabClick("Web")}
         >
           <i className="fa fa-user-plus mr-1.5 text-1.2rem"></i>Websites
         </a>
         <a
           href="#"
           className={`nav settings flex-1 p-4 text-center text-sm no-underline ${
-            activeTab === "settings"
+            activeTab === "UIUX"
               ? "text-green-300 w-full h-full backdrop-blur-2xl bg-transparent  border border-green-500 p-2 rounded-xl"
               : "text-white "
           }`}
-          onClick={() => handleTabClick("settings")}
+          onClick={() => handleTabClick("UIUX")}
         >
           <i className="fa fa-cog mr-1.5 text-1.2rem"></i>Ui / Ux
         </a>
