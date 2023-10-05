@@ -2,20 +2,41 @@ import * as React from "react"
 import Rocket from "../../images/rocket.png"
 import second from "../../images/teamImages.png"
 
-function Section2() {
+const Section2 = React.forwardRef((props, ref) => {
+  const imageRef = React.useRef(null)
+
+  const handleMouseMove = e => {
+    const rect = imageRef.current.getBoundingClientRect()
+    const x = e.clientX - rect.left - rect.width / 2
+    const y = e.clientY - rect.top - rect.height / 2
+
+    const rotateX = (y / rect.height) * 15
+    const rotateY = (-x / rect.width) * 15
+
+    imageRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+  }
+
+  const handleMouseLeave = () => {
+    imageRef.current.style.transform = ""
+  }
   return (
-    <div className="mt-7 mb-14 pr-2 ">
+    <div ref={ref} className="mt-20 mb-14 pr-2  ">
       <div className="h-screen w-screen bg-image-section1">
         <div className="flex h-full w-full flex-col gap-6 md:gap-16 backdrop-blur-3xl">
           <span className="text-2xl md:text-2xl lg:text-5xl text-[#c2e2d4] capitalize text-center">
             Innvocket is a design and technology firm working
           </span>
           <div className="h-80 w-80 md:h-96 md:w-96 self-center">
-            <div className="mt-8 h-full w-full bg-slate-200 relative">
+            <div
+              className="mt-8 h-full w-full bg-slate-200 relative"
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              ref={imageRef}
+            >
               <img
-                src={second} // Replace with your image URL
+                src={second}
                 alt="Image"
-                className="object-cover w-full h-full absolute top-0 left-0"
+                className="object-cover w-full h-full absolute top-0 left-0 transition-transform duration-300"
               />
             </div>
           </div>
@@ -48,6 +69,6 @@ function Section2() {
       </div>
     </div>
   )
-}
+})
 
 export default Section2
