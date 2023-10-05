@@ -14,7 +14,7 @@ function Companys() {
         <div className="grid grid-cols-1 gap-6 bg-transparent p-4 mt-10 md:grid-cols-3">
           {logos.map((logo, index) => (
             <div className=" w-full flex items-center justify-center ">
-              <div
+              <div  
                 key={index}
                 className="rounded-xl     w-[60%] flex items-center justify-center  backdrop-blur-2xl"
               >

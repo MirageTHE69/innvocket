@@ -1,7 +1,6 @@
 import * as React from "react"
 
 function HeroSection() {
-  
   return (
     <div className="h-screen w-screen bg-image-section custom-heading">
       <div className="flex h-screen w-screen backdrop-blur-3xl">
