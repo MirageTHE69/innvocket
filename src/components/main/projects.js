@@ -2,6 +2,10 @@ import React, { useEffect, useRef, useLayoutEffect } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import "/src/styles/tailwind.css"
+import First from "../../images/1.png"
+import Second from "../../images/2.png"
+import Third from "../../images/3.png"
+import { Link } from "gatsby"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -74,11 +78,11 @@ function Projects() {
         <div className="left">
           <div className="desktopContent">
             <div className="desktopContentSection">
-              <h1 className=" text-5xl text-white">Red</h1>
+              <h1 className=" text-5xl text-white">Estate App </h1>
               <p className=" text-2xl text-white">
-                Red is a color often associated with strong emotions such as
-                passion, love, and anger. It is a bold and attention-grabbing
-                color that can evoke feelings of excitement, warmth, and energy.
+                In this Project we Worked with on small firm and do project for
+                thier client we used flutter and MongoDB in this project we with
+                our full team
               </p>
 
               <div className=" border border-white  rounded-full h-[6%] w-1/4 bg-transparent flex justify-center items-center mt-4">
@@ -86,21 +90,17 @@ function Projects() {
               </div>
             </div>
             <div className="desktopContentSection">
-              <h1 className=" text-5xl text-white">Green</h1>
+              <h1 className=" text-5xl text-white">Stock Market App</h1>
               <p className=" text-2xl text-white">
-                Green is a color that is often associated with nature, growth,
-                and harmony. It is a calming and relaxing color that can evoke
-                feelings of balance, stability, and freshness. In color
-                psychology, green is said to represent balance and stability,
-                making it a popular choice for branding and marketing in the
-                health and wellness industry.{" "}
+                We Worked in this project as a only UI/UX designer we have full
+                and Expirenced team Ui/Ux designer
               </p>
               <div className=" border border-white  rounded-full h-[6%] w-1/4 bg-transparent flex justify-center items-center mt-4">
                 <button className="text-white ">view more</button>
               </div>
             </div>
             <div className="desktopContentSection">
-              <h1 className=" text-5xl text-white">Pink</h1>
+              <h1 className=" text-5xl text-white">Cypto Market App</h1>
               <p className=" text-2xl text-white">
                 Pink is a color that is often associated with femininity,
                 romance, and sweetness. It is a softer and more delicate shade
@@ -126,17 +126,14 @@ function Projects() {
               </div>
             </div>
             <div className="desktopContentSection">
-              <h1 className=" text-5xl text-white">Blue</h1>
+              <h1 className=" text-5xl text-white">View More Project</h1>
               <p className=" text-2xl text-white ">
-                Blue is a color that is often associated with calmness, trust,
-                and reliability. It is a peaceful and serene color that can
-                evoke feelings of stability, security, and professionalism. In
-                color psychology, blue is said to represent loyalty and trust,
-                making it a popular choice for branding and marketing in the
-                finance and technology industries.
+                View More Project which we have done in our past time
               </p>
               <div className=" border border-white  rounded-full h-[6%] w-1/4 bg-transparent flex justify-center items-center mt-4">
-                <button className="text-white ">view more</button>
+                <Link to="/portfolio" className="text-white">
+                  view more
+                </Link>
               </div>
             </div>
           </div>
@@ -187,10 +184,34 @@ function Projects() {
           </div>
 
           <div className="desktopPhotos">
-            <div className="desktopPhoto red"></div>
-            <div className="desktopPhoto green"></div>
-            <div className="desktopPhoto pink"></div>
-            <div className="desktopPhoto blue"></div>
+            <div className="desktopPhoto red">
+              <img
+                src={First}
+                alt="Image"
+                className="object-cover w-full h-full absolute top-0 left-0 transition-transform duration-300"
+              />
+            </div>
+            <div className="desktopPhoto green">
+              <img
+                src={Second}
+                alt="Image"
+                className="object-cover w-full h-full absolute top-0 left-0 transition-transform duration-300"
+              />
+            </div>
+            <div className="desktopPhoto pink">
+              <img
+                src={Third}
+                alt="Image"
+                className="object-cover w-full h-full absolute top-0 left-0 transition-transform duration-300"
+              />
+            </div>
+            <div className="desktopPhoto blue">
+              <img
+                src={First}
+                alt="Image"
+                className="object-cover w-full h-full absolute top-0 left-0 transition-transform duration-300"
+              />
+            </div>
           </div>
         </div>
       </div>
