@@ -1,3 +1,0 @@
-[build]
-  command = "npm install --force && npm cache clean --force && npm run build && npm install -g gatsby-cli"
-    
