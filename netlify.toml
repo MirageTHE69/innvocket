@@ -1,0 +1,2 @@
+[build]
+  command = "npm cache clean --force && npm run build"

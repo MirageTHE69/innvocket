@@ -6,10 +6,26 @@ import First from "../../images/1.png"
 import Second from "../../images/2.png"
 import Third from "../../images/3.png"
 import { Link } from "gatsby"
+import Fourth from "../animation/more.json"
+import lottie from "lottie-web"
 
 gsap.registerPlugin(ScrollTrigger)
 
 function Projects() {
+  useEffect(() => {
+    const container4 = document.getElementById("lottie-container-4")
+
+    if (container4) {
+      lottie.loadAnimation({
+        container: container4,
+        animationData: Fourth,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+      })
+    }
+  }, [])
+
   const comp = useRef(null)
   const galleryRef = useRef(null)
 
@@ -193,7 +209,12 @@ function Projects() {
                 className="object-cover w-full h-full absolute top-0 left-0 transition-transform duration-300"
               />
             </div>
-            <div className="desktopPhoto "></div>
+            <div className="desktopPhoto p-5 ">
+              <div
+                className="mx-auto bg-black rounded-full w-44 h-68 overflow-hidden"
+                id="More-container-1"
+              ></div>
+            </div>
           </div>
         </div>
       </div>
