@@ -14,7 +14,7 @@ const Protfolio = () => {
       <div className=" w-screen  backdrop-blur-2xl">
         <Navbar onTabClick={handleTabClick} selectedTab={selectedTab} />
         <div>
-          <div className=" mt-10 bg-[#090c10]  pb-52 ">
+          <div className=" mt-10 bg-[#090c10] pb-64 ">
           <Grid selectedTab={selectedTab} />
           </div>
         </div>
