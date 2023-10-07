@@ -1,3 +1,3 @@
 [build]
-  command = "npm install --legacy-peer-deps && npm cache clean --force && npm run build && npm install -g gatsby-cli"
+  command = "npm install --force && npm cache clean --force && npm run build && npm install -g gatsby-cli"
     
