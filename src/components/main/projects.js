@@ -102,36 +102,24 @@ function Projects() {
             <div className="desktopContentSection">
               <h1 className=" text-5xl text-white">Cypto Market App</h1>
               <p className=" text-2xl text-white">
-                Pink is a color that is often associated with femininity,
-                romance, and sweetness. It is a softer and more delicate shade
-                of red that can evoke feelings of warmth, love, and nurturing.
+                An innovative Flutter-powered crypto market app that provides
+                real-time cryptocurrency price tracking, comprehensive market
+                analysis, and a user-friendly interface, catering to crypto
+                enthusiasts and investors alike
               </p>
-              <p className=" text-2xl text-white">
-                In the world of branding and marketing, pink is often used to
-                target a female audience or to promote products that are
-                associated with beauty, love, or romance.
-              </p>
-              <p className=" text-2xl text-white">
-                Pink is also used in the food industry, as it is associated with
-                sweetness and desserts. Pink is often used in breast cancer
-                awareness campaigns, as it has become the signature color of the
-                movement.{" "}
-              </p>
-              <p className=" text-2xl text-white">
-                Pink is also commonly used in baby showers and weddings, as it
-                symbolizes love, innocence, and new beginnings.
-              </p>
+
               <div className=" border border-white  rounded-full h-[6%] w-1/4 bg-transparent flex justify-center items-center mt-4">
                 <button className="text-white ">view more</button>
               </div>
             </div>
             <div className="desktopContentSection">
-              <h1 className=" text-5xl text-white">View More Project</h1>
+              <h1 className=" text-5xl text-white"> More Project</h1>
               <p className=" text-2xl text-white ">
-                View More Project which we have done in our past time
+                Delve deeper into our impressive portfolio. Simply click 'View
+                More' to explore a wide array of our projects in greater detail
               </p>
               <div className=" border border-white  rounded-full h-[6%] w-1/4 bg-transparent flex justify-center items-center mt-4">
-                <Link to="/portfolio" className="text-white">
+                <Link to="/portfolio" className="text-white no-underline">
                   view more
                 </Link>
               </div>
@@ -205,13 +193,7 @@ function Projects() {
                 className="object-cover w-full h-full absolute top-0 left-0 transition-transform duration-300"
               />
             </div>
-            <div className="desktopPhoto blue">
-              <img
-                src={First}
-                alt="Image"
-                className="object-cover w-full h-full absolute top-0 left-0 transition-transform duration-300"
-              />
-            </div>
+            <div className="desktopPhoto "></div>
           </div>
         </div>
       </div>

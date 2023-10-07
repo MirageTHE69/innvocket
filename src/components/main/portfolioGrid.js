@@ -1,39 +1,162 @@
-import React from "react"
+import React, { useState, useEffect, useRef } from "react"
+import gsap from "gsap"
 
 function Grid({ selectedTab }) {
-  // Hardcoded card data
   const cardData = {
-    All: ["card 1", "card 2", "card 3", "card 4", "card 5", "card 6"],
-    Mobile: ["card 2", "card 3"],
-    Web: ["card 3"],
-    UIUX: ["card 4"],
+    All: [
+      {
+        name: "card 1",
+        imageURL:
+          "https://res.cloudinary.com/dxeb4jubk/image/upload/v1696596653/Images/innvocket/1_kdiocj.png",
+      },
+      {
+        name: "card 2",
+        imageURL:
+          "https://res.cloudinary.com/dxeb4jubk/image/upload/v1696596649/Images/innvocket/3_vtectv.png",
+      },
+      {
+        name: "card 3",
+        imageURL:
+          "https://res.cloudinary.com/dxeb4jubk/image/upload/v1696596648/Images/innvocket/4_h23jlp.png",
+      },
+      {
+        name: "card 4",
+        imageURL:
+          "https://res.cloudinary.com/dxeb4jubk/image/upload/v1696596647/Images/innvocket/2_yyu2hw.png",
+      },
+      {
+        name: "card 5",
+        imageURL:
+          "https://res.cloudinary.com/dxeb4jubk/image/upload/v1696596647/Images/innvocket/2_yyu2hw.png",
+      },
+      {
+        name: "card 6",
+        imageURL:
+          "https://res.cloudinary.com/dxeb4jubk/image/upload/v1696596647/Images/innvocket/2_yyu2hw.png",
+      },
+    ],
+    Mobile: [
+      {
+        name: "card 2",
+        imageURL:
+          "https://res.cloudinary.com/dxeb4jubk/image/upload/v1696596647/Images/innvocket/2_yyu2hw.png",
+      },
+      {
+        name: "card 3",
+        imageURL:
+          "https://res.cloudinary.com/dxeb4jubk/image/upload/v1696596647/Images/innvocket/2_yyu2hw.png",
+      },
+    ],
+    Web: [
+      {
+        name: "card 3",
+        imageURL:
+          "https://res.cloudinary.com/dxeb4jubk/image/upload/v1696596647/Images/innvocket/2_yyu2hw.png",
+      },
+    ],
+    UIUX: [
+      {
+        name: "card 4",
+        imageURL:
+          "https://res.cloudinary.com/dxeb4jubk/image/upload/v1696596647/Images/innvocket/2_yyu2hw.png",
+      },
+    ],
   }
 
-  // Get the cards based on the selected tab
-  const selectedCards =
-    selectedTab === "All" ? cardData.All : cardData[selectedTab] || []
+  const [items, setItems] = useState(cardData[selectedTab] || cardData.All)
+  const gridRef = useRef(null)
+  const positions = useRef({})
 
-  // Define a class to control the blur effect
-  const blurClass = "blur-sm" // You can define the blur class in your CSS or Tailwind CSS
+  useEffect(() => {
+    const gridElement = gridRef.current
 
-  // Separate the selected card from the rest
-  const selectedCard = selectedCards.length > 0 ? selectedCards[0] : null
-  const otherCards = cardData.All.filter(content => content !== selectedCard)
+    // Store the initial positions of the items
+    items.forEach(item => {
+      const domNode = gridElement.querySelector(`[data-id="${item.name}"]`)
+      if (domNode) {
+        const rect = domNode.getBoundingClientRect()
+        positions.current[item.name] = rect
+      }
+    })
 
-  // Reorder the cards so that the selected card comes first
-  const orderedCards = selectedCard ? [selectedCard, ...otherCards] : otherCards
+    let selectedCards = []
+    if (selectedTab === "All") {
+      selectedCards = cardData.All
+    } else {
+      selectedCards = cardData[selectedTab] || []
+      const remainingCards = cardData.All.filter(
+        card =>
+          !selectedCards.some(selectedCard => selectedCard.name === card.name)
+      )
+      selectedCards = [...selectedCards, ...remainingCards]
+    }
 
+    // Sort the selectedCards array
+    selectedCards.sort((a, b) => {
+      const aSpan = getSpanClass(a.name)
+      const bSpan = getSpanClass(b.name)
+      if (aSpan === "col-span-1" && bSpan !== "col-span-2") return -1
+      if (bSpan === "col-span-2" && aSpan !== "col-span-1") return 1
+      if (aSpan === "row-span-2" && bSpan !== "row-span-1") return -1
+      if (bSpan === "row-span-2" && aSpan !== "row-span-1") return 1
+      return 0
+    })
+
+    setItems(selectedCards)
+  }, [selectedTab])
+
+  useEffect(() => {
+    const gridElement = gridRef.current
+
+    // Animate the items to their new positions
+    items.forEach(item => {
+      const domNode = gridElement.querySelector(`[data-id="${item.name}"]`)
+      if (domNode && positions.current[item.name]) {
+        const initialPosition = positions.current[item.name]
+        const finalPosition = domNode.getBoundingClientRect()
+
+        const dx = initialPosition.left - finalPosition.left
+        const dy = initialPosition.top - finalPosition.top
+
+        gsap.fromTo(domNode, { x: dx, y: dy }, { x: 0, y: 0, duration: 0.5 })
+      }
+    })
+  }, [items])
+
+  const getSpanClass = name => {
+    switch (name) {
+      case "card 1":
+        return "col-span-2"
+      case "card 4":
+        return "row-span-2"
+      default:
+        return ""
+    }
+  }
   return (
-    <div>
-      <div className="h-screen w-screen p-5 md:p-16 md:mt-5 text-white grid grid-cols-1 md:grid-cols-3 grid-rows-3 gap-3">
-        {orderedCards.map((content, index) => (
+    <div className="h-screen w-screen py-10 flex items-center justify-center">
+      {/* Adjust grid columns for mobile and larger screens */}
+      <div
+        className={`grid gap-3 w-full sm:w-3/4 lg:w-4/5 h-full px-4 ${
+          selectedTab === "All"
+            ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+            : "grid-cols-1 sm:grid-cols-2"
+        }`}
+        ref={gridRef}
+      >
+        {items.map((item, index) => (
           <div
-            key={index}
-            className={`bg-[#0d1117] rounded p-3 md:p-5 ${
-              selectedCards.includes(content) ? "" : blurClass
-            }`}
+            key={item.name}
+            data-id={item.name}
+            className={`bg-gray-300 p-2 sm:p-4 rounded-xl ${getSpanClass(
+              item.name
+            )} relative`}
           >
-            {content}
+            <img
+              src={item.imageURL}
+              alt={item.name}
+              className="object-cover w-full h-full transition-transform duration-300 rounded-xl"
+            />
           </div>
         ))}
       </div>

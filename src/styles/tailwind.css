@@ -36,6 +36,13 @@
   background-repeat: no-repeat;
 }
 
+.bg-image-section3 {
+  background-image: url("../images/abstract.png");
+  background-size: 17%;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
 .card-container {
   perspective: 1000px;
   display: flex;
@@ -268,4 +275,54 @@
   .mobileContent {
     display: block;
   }
+}
+
+.dynamic-grid-item {
+  height: auto;
+}
+
+.grid-item-image {
+  max-width: 100%;
+  height: auto; /* Ensures the image scales proportionally */
+}
+
+/* Add this CSS to your stylesheet */
+.grid-container {
+  height: 80vh; /* Set the desired height */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.black-background {
+  background-color: black;
+}
+
+.my-masonry-grid {
+  display: flex;
+  margin-left: -16px; /* Adjust gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 16px; /* Adjust gutter size */
+  background-clip: padding-box;
+}
+
+.grid-item {
+  margin-bottom: 16px; /* Adjust space between items */
+}
+
+.bg-gradient {
+  background: linear-gradient(to bottom, #262a34, #1b1d25);
+  position: relative;
+}
+
+.bg-gradient::before {
+  content: "";
+  position: absolute;
+  top: -2px; /* Adjust based on desired border thickness */
+  left: -2px; /* Adjust based on desired border thickness */
+  right: -2px; /* Adjust based on desired border thickness */
+  bottom: -2px; /* Adjust based on desired border thickness */
+  z-index: -1;
+  background: linear-gradient(to bottom, #262a34, #1b1d25);
+  border-radius: inherit; /* To maintain the rounded corners */
 }
