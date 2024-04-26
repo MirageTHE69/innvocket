@@ -1,8 +1,45 @@
-import * as React from "react"
+import React, { useState } from "react";
+import apiService from '../../apiService'; // Assuming this is the path to your API service
 
 function GetInTouch() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [error, setError] = useState("");
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    try {
+      const response = await apiService.post('/contacts', formData);
+  
+      if (response.status === 200) {
+        setFormSubmitted(true);
+        setError(""); // Clear any previous error messages
+      } else {
+        setError("An error occurred while submitting the form. Please try again later.");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setError("An error occurred while submitting the form. Please try again later.");
+    }
+  };
+  
+  const closeModal = () => {
+    setFormSubmitted(false);
+    setFormData({ name: "", email: "", phone: "", message: "" });
+  };
+
   return (
-    <div className="w-full h-auto lg:h-screen px-6 lg:px-16">
+    <div id="contact" className="w-full h-auto lg:h-screen px-6 lg:px-16">
       <div className="w-full bg-black p-6 lg:p-10 text-white">
         <h2 className="text-4xl lg:text-5xl mb-6 lg:mb-16 text-center custom-heading">
           Get In Touch
@@ -21,32 +58,60 @@ function GetInTouch() {
           </div>
           <div className="lg:w-1/2 space-y-4">
             <input
+              id="name"
+              type="text"
               className="w-full h-10 p-4 lg:p-5 rounded-lg border border-neutral-800 bg-gradient-to-b from-neutral-950 to-neutral-950 backdrop-blur-2xl"
               placeholder="-- Enter your name"
-            ></input>
+              value={formData.name}
+              onChange={handleChange}
+            />
 
             <input
+              id="email"
+              type="email"
               className="w-full h-10 p-4 lg:p-5 rounded-lg border border-neutral-800 bg-gradient-to-b from-neutral-950 to-neutral-950 backdrop-blur-2xl"
               placeholder="-- Enter your email"
-            ></input>
+              value={formData.email}
+              onChange={handleChange}
+            />
+
             <input
+              id="phone"
+              type="tel"
               className="w-full h-10 p-4 lg:p-5 rounded-lg border border-neutral-800 bg-gradient-to-b from-neutral-950 to-neutral-950 backdrop-blur-2xl"
               placeholder="-- Enter your phone number"
-            ></input>
+              value={formData.phone}
+              onChange={handleChange}
+            />
 
             <textarea
+              id="message"
               className="w-full h-32 p-4 lg:p-5 rounded-lg border border-neutral-800 bg-gradient-to-b from-neutral-950 to-neutral-950 backdrop-blur-2xl"
               placeholder="-- Enter your message"
-            ></textarea>
+              value={formData.message}
+              onChange={handleChange}
+            />
 
-            <button className="w-full h-12 mt-8 lg:mt-12 bg-gradient-to-r from-green-700 via-green-500 to-green-600 rounded-lg backdrop-blur-2xl">
+            <button
+              onClick={handleSubmit}
+              className="w-full h-12 mt-8 lg:mt-12 bg-gradient-to-r from-green-700 via-green-500 to-green-600 rounded-lg backdrop-blur-2xl"
+            >
               Submit
             </button>
+            {error && <p className=" text-green-500">{error}</p>}
           </div>
         </div>
       </div>
+      {formSubmitted && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-8 rounded-md">
+            <p className="text-xl mb-4">Form Submitted Successfully!</p>
+            <button onClick={closeModal} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-md">Close</button>
+          </div>
+        </div>
+      )}
     </div>
-  )
+  );
 }
 
-export default GetInTouch
+export default GetInTouch;

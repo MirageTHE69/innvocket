@@ -72,26 +72,9 @@ function Navbar({ textColor }) {
               className="text-black flex items-center mr-7 custom-heading cursor-pointer"
               onClick={toggleMenu}
             >
-              <img
-                src={Ham}
-                alt="Menu"
-                className="h-7 w-7 mr-2 mt-5 m align-middle"
-              />
-              Menu
+            
             </span>
-            {menuOpen && (
-              <ul className="absolute top-12 right-0 bg-white p-4 space-y-4 text-xl rounded-md shadow-lg">
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/about">About</Link>
-                </li>
-                <li>
-                  <Link to="/services">Services</Link>
-                </li>
-              </ul>
-            )}
+           
           </div>
         </div>
       </nav>
@@ -162,7 +145,7 @@ function Navbar({ textColor }) {
                       ></path>
                     </svg>
                     </div>
-                    <span className="block pb-3">    <Link className=" no-underline text-white text-sm"to="/portfolio/#">Portfolio</Link></span>
+                    <span className="block pb-3">    <Link className=" no-underline text-white text-sm"to="/">Portfolio</Link></span>
                   </div>
                   <div class=" border border-gray-400 bg-gradient h-[80%]  py-7  p-8  rounded-xl text-center  space-y-2  ">
                     <div className=" py-1  px-1 rounded-md bg-[#323743] border   ">
@@ -187,7 +170,7 @@ function Navbar({ textColor }) {
                       ></path>
                     </svg>
                     </div>
-                    <span className="block pb-3">    <Link className=" no-underline text-white text-sm"to="/">contact</Link></span>
+                    <span className="block pb-3">    <Link className=" no-underline text-white text-sm"to="#contact">contact</Link></span>
                   </div>
                 </div>
               </div>

@@ -1,3 +1,4 @@
+import { Link } from "gatsby"
 import * as React from "react"
 
 function HeroSection() {
@@ -14,9 +15,9 @@ function HeroSection() {
           <div className="w-screen flex justify-center mt-8 md:ml-20">
             <div className="w-full md:w-3/4 px-4 md:px-0 md:ml-4 flex flex-col md:flex-row gap-4 items-center">
               <div className="w-1/2 sm:w-1/3 md:w-1/6 bg-white rounded-full p-2 mr-5 mb-4 ml-5 flex items-center justify-center relative">
-                <span className="text-base md:text-lg text-green-500 mr-2">
-                  Get in Touch
-                </span>
+                <Link to="#contact" className="text-base md:text-lg text-green-500 mr-2">
+                  Get in Touch 
+                </Link>
                 <svg
                   className="w-6 md:w-8 h-6 md:h-8 text-green-500 absolute ml-4 right-2 md:right-0 transform -rotate-45"
                   fill="none"

@@ -75,9 +75,10 @@ function Footer() {
                 <div className="flex justify-start mt-2">
                   <a
                     className="block flex items-center text-gray-300 hover:text-white mr-6 no-underline"
-                    href="#"
+                    href="https://www.facebook.com/profile.php?id=100092334046577"
                   >
                     <svg
+                      
                       viewBox="0 0 24 24"
                       className="fill-current w-5 h-5"
                       xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +88,7 @@ function Footer() {
                   </a>
                   <a
                     className="block flex items-center text-gray-300 hover:text-white mr-6 no-underline"
-                    href="#"
+                    href="https://twitter.com/Zeelkaklotar1"
                   >
                     <svg
                       viewBox="0 0 24 24"
@@ -99,7 +100,7 @@ function Footer() {
                   </a>
                   <a
                     className="block flex items-center text-gray-300 hover:text-white no-underline"
-                    href="#"
+                    href="https://github.com/zeelkaklotar"
                   >
                     <svg
                       viewBox="0 0 24 24"
