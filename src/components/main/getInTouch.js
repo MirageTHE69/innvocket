@@ -36,6 +36,7 @@ function GetInTouch() {
   const closeModal = () => {
     setFormSubmitted(false);
     setFormData({ name: "", email: "", phone: "", message: "" });
+    setError(""); // Clear any previous error messages
   };
 
   return (
@@ -61,7 +62,7 @@ function GetInTouch() {
               id="name"
               type="text"
               className="w-full h-10 p-4 lg:p-5 rounded-lg border border-neutral-800 bg-gradient-to-b from-neutral-950 to-neutral-950 backdrop-blur-2xl"
-              placeholder="-- Enter your name"
+              placeholder="Your Name"
               value={formData.name}
               onChange={handleChange}
             />
@@ -70,24 +71,28 @@ function GetInTouch() {
               id="email"
               type="email"
               className="w-full h-10 p-4 lg:p-5 rounded-lg border border-neutral-800 bg-gradient-to-b from-neutral-950 to-neutral-950 backdrop-blur-2xl"
-              placeholder="-- Enter your email"
+              placeholder="example@gmail.com" 
               value={formData.email}
+              pattern="[a-zA-Z0-9._%+-]+@gmail.com"
               onChange={handleChange}
+              title="Please enter a valid Gmail address" 
+              required 
             />
 
             <input
               id="phone"
               type="tel"
               className="w-full h-10 p-4 lg:p-5 rounded-lg border border-neutral-800 bg-gradient-to-b from-neutral-950 to-neutral-950 backdrop-blur-2xl"
-              placeholder="-- Enter your phone number"
+              placeholder="Phone Number"
               value={formData.phone}
               onChange={handleChange}
+              
             />
 
             <textarea
               id="message"
               className="w-full h-32 p-4 lg:p-5 rounded-lg border border-neutral-800 bg-gradient-to-b from-neutral-950 to-neutral-950 backdrop-blur-2xl"
-              placeholder="-- Enter your message"
+              placeholder="Message"
               value={formData.message}
               onChange={handleChange}
             />
@@ -98,7 +103,7 @@ function GetInTouch() {
             >
               Submit
             </button>
-            {error && <p className=" text-green-500">{error}</p>}
+            {error && <p className="text-red-500">{error}</p>}
           </div>
         </div>
       </div>
