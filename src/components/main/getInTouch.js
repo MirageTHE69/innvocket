@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import apiService from '../../apiService'; // Assuming this is the path to your API service
+import React, { useState } from "react"
+import apiService from "../../apiService" // Assuming this is the path to your API service
 
 function GetInTouch() {
   const [formData, setFormData] = useState({
@@ -7,37 +7,40 @@ function GetInTouch() {
     email: "",
     phone: "",
     message: "",
-  });
-  const [error, setError] = useState("");
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  })
+  const [error, setError] = useState("")
+  const [formSubmitted, setFormSubmitted] = useState(false)
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
-  };
+  const handleChange = e => {
+    setFormData({ ...formData, [e.target.id]: e.target.value })
+  }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-  
+  const handleSubmit = async e => {
+    e.preventDefault()
+
     try {
-      const response = await apiService.post('/contacts', formData);
-  
-      if (response.status === 200) {
-        setFormSubmitted(true);
-        setError(""); // Clear any previous error messages
+      const response = await apiService.post("/contacts", formData)
+
+      if (response.status === 201) {
+        setFormSubmitted(true)
       } else {
-        setError("An error occurred while submitting the form. Please try again later.");
+        setError(
+          "An error occurred while submitting the form. Please try again later."
+        )
       }
     } catch (error) {
-      console.error("Form submission error:", error);
-      setError("An error occurred while submitting the form. Please try again later.");
+      console.error("Form submission error:", error)
+      setError(
+        "An error occurred while submitting the form. Please try again later."
+      )
     }
-  };
-  
+  }
+
   const closeModal = () => {
-    setFormSubmitted(false);
-    setFormData({ name: "", email: "", phone: "", message: "" });
-    setError(""); // Clear any previous error messages
-  };
+    setFormSubmitted(false)
+    setFormData({ name: "", email: "", phone: "", message: "" })
+    setError("") // Clear any previous error messages
+  }
 
   return (
     <div id="contact" className="w-full h-auto lg:h-screen px-6 lg:px-16">
@@ -71,12 +74,12 @@ function GetInTouch() {
               id="email"
               type="email"
               className="w-full h-10 p-4 lg:p-5 rounded-lg border border-neutral-800 bg-gradient-to-b from-neutral-950 to-neutral-950 backdrop-blur-2xl"
-              placeholder="example@gmail.com" 
+              placeholder="example@gmail.com"
               value={formData.email}
               pattern="[a-zA-Z0-9._%+-]+@gmail.com"
               onChange={handleChange}
-              title="Please enter a valid Gmail address" 
-              required 
+              title="Please enter a valid Gmail address"
+              required
             />
 
             <input
@@ -86,7 +89,6 @@ function GetInTouch() {
               placeholder="Phone Number"
               value={formData.phone}
               onChange={handleChange}
-              
             />
 
             <textarea
@@ -111,12 +113,17 @@ function GetInTouch() {
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-8 rounded-md">
             <p className="text-xl mb-4">Form Submitted Successfully!</p>
-            <button onClick={closeModal} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-md">Close</button>
+            <button
+              onClick={closeModal}
+              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-md"
+            >
+              Close
+            </button>
           </div>
         </div>
       )}
     </div>
-  );
+  )
 }
 
-export default GetInTouch;
+export default GetInTouch
