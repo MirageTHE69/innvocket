@@ -5,7 +5,6 @@ function GetInTouch() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
     message: "",
   })
   const [error, setError] = useState("")
@@ -38,7 +37,7 @@ function GetInTouch() {
 
   const closeModal = () => {
     setFormSubmitted(false)
-    setFormData({ name: "", email: "", phone: "", message: "" })
+    setFormData({ name: "", email: "", message: "" })
     setError("") // Clear any previous error messages
   }
 
@@ -82,14 +81,7 @@ function GetInTouch() {
               required
             />
 
-            <input
-              id="phone"
-              type="tel"
-              className="w-full h-10 p-4 lg:p-5 rounded-lg border border-neutral-800 bg-gradient-to-b from-neutral-950 to-neutral-950 backdrop-blur-2xl"
-              placeholder="Phone Number"
-              value={formData.phone}
-              onChange={handleChange}
-            />
+        
 
             <textarea
               id="message"
